@@ -1,36 +1,134 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfólio de Alexandre Raminelli
 
-## Getting Started
+<!-- TODO: introdução -->
 
-First, run the development server:
+<!-- TODO: como executar -->
+
+<!-- ----------------------------------------------------------------------- -->
+
+## 📁 File Structure
+
+<!-- Gerar árvore mais facilmente: https://devtool.tech/en/tree -->
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+alexandre-raminelli-portfolio/
+├── public/
+│   └── ...
+├── src/
+│   └── ...
+├── .env.example
+├── .gitignore
+├── eslint.config.mjs
+├── next.config.ts
+├── package.json
+├── pnpm-lock.yaml
+├── pnpm-workspace.yaml
+├── postcss.config.mjs
+└── tsconfig.json
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<!-- Explicação -->
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| Path/Arquivo         | Descrição                                                                   |
+| -------------------- | --------------------------------------------------------------------------- |
+| `public/`            | Arquivos estáticos.                                                         |
+| `src/`               | Código-fonte da aplicação.                                                  |
+| `.env.example`       | Modelo de variáveis de ambiente, sem os valores.                            |
+| `.gitignore`         | Arquivos e pastas que serão ignorados pelo Git.                             |
+| `eslint.config.mjs`  | Regras de qualidade e estilo de código (ESLint).                            |
+| `next.config.ts`     | Configuração do Next.js.                                                    |
+| `package.json`       | Dependências e scripts do projeto.                                          |
+| `pnpm-lock.yaml`     | Lockfile do pnpm. Garante versões idênticas em todos os ambientes.          |
+| `postcss.config.mjs` | Configuração do PostCSS. Necessário para o Tailwind CSS funcionar no build. |
+| `tsconfig.json`      | Configuração do Typescript.                                                 |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### `src/`: Código-fonte da aplicação.
 
-## Learn More
+```bash
+alexandre-raminelli-portfolio/src/
+├── app/
+│   ├── (auth)/
+│   ├── (portfolio)/
+│   ├── dashboard/
+│   ├── icon.svg
+│   ├── layout.tsx
+│   └── not-found.tsx
+├── components/
+│   ├── layout/
+│   ├── sections/
+│   ├── shared/
+│   └── ui/
+├── constants/
+│   ├── content/
+│   │   └── ...
+│   ├── icons.ts
+│   ├── images.ts
+│   ├── routes.ts
+│   └── site.ts
+├── hooks/
+├── lib/
+│   ├── supabase/
+│   │   ├── client.ts
+│   │   └── server.ts
+│   └── utils.ts
+├── services/
+│   └── ...
+├── styles/
+│   └── globals.css
+├── types/
+│   └── index.ts
+└── middleware.ts
+```
 
-To learn more about Next.js, take a look at the following resources:
+#### `app/`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+| Path/Arquivo        | Descrição                                                                                                              |
+| ------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| `app/`              | Diretório principal do App Router do Next.js. Contém todas as rotas, layouts e páginas.                                |
+| `app/(auth)/`       | Route group para as rotas de autenticação.                                                                             |
+| `app/(portfolio)/`  | Route group para as páginas públicas do portfólio.                                                                     |
+| `app/dashboard/`    | Área restrita de gerenciamento de informações.                                                                         |
+| `app/icon.svg`      | Ícone do site, usado como favicon.                                                                                     |
+| `app/layout.tsx`    | Root layout que envolve toda a aplicação. Contém providers globais, fontes, metadados base e tags `<html>` e `<body>`. |
+| `app/not-found.tsx` | Página personalizada para rotas não encontradas (404).                                                                 |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+#### `components/`
 
-## Deploy on Vercel
+| Path/Arquivo           | Descrição                                                             |
+| ---------------------- | --------------------------------------------------------------------- |
+| `components/`          | Componentes reutilizáveis, organizados por responsabilidade.          |
+| `components/layout/`   | Componentes estruturais da página, como header, footer e sidebar.     |
+| `components/sections/` | Seções completas da landing page.                                     |
+| `components/shared/`   | Componentes reutilizáveis sem vínculo com seção ou layout específico. |
+| `components/ui/`       | Componentes base do Shadcn.                                           |
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+#### `constants/`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+| Path/Arquivo          | Descrição                                              |
+| --------------------- | ------------------------------------------------------ |
+| `constants/`          | Constantes globais da aplicação.                       |
+| `constants/content/`  | Textos e dados estáticos organizados por seção e tipo. |
+| `constants/icons.ts`  | Mapeamento dos ícones do HugeIcons usado na aplicação. |
+| `constants/images.ts` | Paths centralizados das imagens em `public/`.          |
+| `constants/routes.ts` | Rotas da aplicação.                                    |
+| `constants/site.ts`   | Metadados globais do site.                             |
+
+#### `lib/`
+
+| Path/Arquivo             | Descrição                                                                                    |
+| ------------------------ | -------------------------------------------------------------------------------------------- |
+| `lib/`                   | Utilitários e configurações de infraestrutura.                                               |
+| `lib/supabase/`          | Configurações e clientes para integração com Supabase.                                       |
+| `lib/supabase/client.ts` | Instância do Supabase para uso client-side (Client Components e browser).                    |
+| `lib/supabase/server.ts` | Instância do Supabase para uso server-side (Server Components, Server Actions e middleware). |
+| `lib/utils.ts`           | Funções utilitárias genéricas.                                                               |
+
+#### Outros diretórios
+
+| Path/Arquivo         | Descrição                                                                                                             |
+| -------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| `hooks/`             | Custom hooks reutilizáveis.                                                                                           |
+| `services/`          | Funções que encapsulam as queries ao Supabase, organizadas por domínio.                                               |
+| `styles/globals.css` | Estilos globais da aplicação, tema do Shadcn e configurações do TailwindCSS.                                          |
+| `types/`             | Tipagens TypeScript globais.                                                                                          |
+| `middleware.ts`      | Middleware do Next.js executado antes de cada requisição. Responsável pelo redirecionamento com base na autenticação. |
