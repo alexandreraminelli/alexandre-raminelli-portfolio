@@ -50,8 +50,7 @@ export default function RootLayout({
         {/* Configuração de tema */}
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
-          enableSystem // permite usar o tema do sistema operacional
+          defaultTheme="dark" // tema padrão
           disableTransitionOnChange
         >
           {children} {/* Páginas e layouts aninhados */}
