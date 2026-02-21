@@ -18,6 +18,7 @@ alexandre-raminelli-portfolio/
 │   └── ...
 ├── .env.example
 ├── .gitignore
+├── components.json
 ├── eslint.config.mjs
 ├── next.config.ts
 ├── package.json
@@ -35,6 +36,7 @@ alexandre-raminelli-portfolio/
 | `src/`               | Código-fonte da aplicação.                                                  |
 | `.env.example`       | Modelo de variáveis de ambiente, sem os valores.                            |
 | `.gitignore`         | Arquivos e pastas que serão ignorados pelo Git.                             |
+| `components.json`    | Configurações do Shadcn.                                                    |
 | `eslint.config.mjs`  | Regras de qualidade e estilo de código (ESLint).                            |
 | `next.config.ts`     | Configuração do Next.js.                                                    |
 | `package.json`       | Dependências e scripts do projeto.                                          |
