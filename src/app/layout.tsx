@@ -1,3 +1,4 @@
+import { ThemeProvider } from "@/components/providers/theme-provider"
 import "@/styles/globals.css"
 import type { Metadata } from "next"
 import { Geist_Mono, Inter } from "next/font/google"
@@ -39,9 +40,17 @@ export default function RootLayout({
   return (
     <html
       lang="pt-br" // idioma do site
+      suppressHydrationWarning // suprime avisos de hidratação para evitar problemas de renderização
       className={`${inter.variable} ${geistMono.variable} antialiased`}
     >
       <body>
+        {/* Configuração de tema */}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem // permite usar o tema do sistema operacional
+          disableTransitionOnChange
+        />
         {children} {/* Páginas e layouts aninhados */}
       </body>
     </html>
