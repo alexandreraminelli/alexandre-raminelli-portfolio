@@ -1,20 +1,23 @@
 import { ThemeProvider } from "@/components/providers/theme-provider"
 import "@/styles/globals.css"
 import type { Metadata } from "next"
-import { Geist_Mono, Inter } from "next/font/google"
+import { Inter, JetBrains_Mono } from "next/font/google"
 
 /**
  * Fonte Inter do Google Fonts, configurada para uso em todo o aplicativo.
  * Fonte sans-serif padrão do site.
  */
-const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
+})
 
 /**
- * Fonte Geist Mono do Google Fonts, configurada para uso em todo o aplicativo.
+ * Fonte JetBrains Mono do Google Fonts, configurada para uso em todo o aplicativo.
  * Fonte monoespaçada para códigos e determinados elementos.
  */
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const jetBrainsMono = JetBrains_Mono({
+  variable: "--font-jetbrains-mono",
   subsets: ["latin"],
 })
 
@@ -41,13 +44,13 @@ export default function RootLayout({
     <html
       lang="pt-br" // idioma do site
       suppressHydrationWarning // suprime avisos de hidratação para evitar problemas de renderização
-      className={`${inter.variable} ${geistMono.variable} antialiased`}
+      className={`${inter.variable} ${jetBrainsMono.variable}`}
     >
-      <body>
+      <body className="antialiased">
         {/* Configuração de tema */}
         <ThemeProvider
           attribute="class"
-          defaultTheme="dark"
+          defaultTheme="system"
           enableSystem // permite usar o tema do sistema operacional
           disableTransitionOnChange
         >
