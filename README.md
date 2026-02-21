@@ -57,6 +57,7 @@ alexandre-raminelli-portfolio/src/
 │   └── not-found.tsx
 ├── components/
 │   ├── layout/
+│   ├── providers/
 │   ├── sections/
 │   ├── shared/
 │   └── ui/
@@ -96,13 +97,14 @@ alexandre-raminelli-portfolio/src/
 
 #### `components/`
 
-| Path/Arquivo           | Descrição                                                             |
-| ---------------------- | --------------------------------------------------------------------- |
-| `components/`          | Componentes reutilizáveis, organizados por responsabilidade.          |
-| `components/layout/`   | Componentes estruturais da página, como header, footer e sidebar.     |
-| `components/sections/` | Seções completas da landing page.                                     |
-| `components/shared/`   | Componentes reutilizáveis sem vínculo com seção ou layout específico. |
-| `components/ui/`       | Componentes base do Shadcn.                                           |
+| Path/Arquivo            | Descrição                                                             |
+| ----------------------- | --------------------------------------------------------------------- |
+| `components/`           | Componentes reutilizáveis, organizados por responsabilidade.          |
+| `components/layout/`    | Componentes estruturais da página, como header, footer e sidebar.     |
+| `components/providers/` | Provedores de contexto.                                               |
+| `components/sections/`  | Seções completas da landing page.                                     |
+| `components/shared/`    | Componentes reutilizáveis sem vínculo com seção ou layout específico. |
+| `components/ui/`        | Componentes base do Shadcn.                                           |
 
 #### `constants/`
 
