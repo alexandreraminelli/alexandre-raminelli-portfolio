@@ -9,6 +9,10 @@ export const UI_TEXTS = {
     delete: "Excluir",
   },
 
+  contact: {
+    github: "Ver GitHub",
+  },
+
   status: {
     loading: "Carregando...",
     error: "Ocorreu um erro. Por favor, tente novamente mais tarde.",
