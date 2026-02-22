@@ -28,7 +28,7 @@ export default function PortfolioHeader() {
         <GitHubButton className="max-sm:hidden" size="lg" />
         <GitHubButton hideLabel className="sm:hidden" size="icon-lg" />
         {/* Botão de tema */}
-        <ModeToggle />
+        <ModeToggle size="icon-lg" />
       </div>
     </header>
   )

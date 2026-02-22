@@ -19,7 +19,7 @@ interface ThemeOption {
 /**
  * Botão de alternância de tema.
  */
-export function ModeToggle() {
+export function ModeToggle({ size = "icon", ...props }: React.ComponentPropsWithRef<typeof Button>) {
   // Controle do estado do tema
   const { theme, setTheme, resolvedTheme } = useTheme()
 
@@ -34,7 +34,7 @@ export function ModeToggle() {
     <DropdownMenu>
       {/* Botão de tema */}
       <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="icon">
+        <Button variant="outline" size={size} {...props}>
           {/* Ícone */}
           <HugeiconsIcon icon={theme === "light" || resolvedTheme === "light" ? ICONS.theme.light : ICONS.theme.dark} className="absolute h-7 w-7" />
           <span className="sr-only">{UI_TEXTS.theme.toggleTheme}</span>
