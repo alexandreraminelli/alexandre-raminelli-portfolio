@@ -1,0 +1,75 @@
+import { ThemeProvider } from "@/components/providers/theme-provider"
+import { SITE } from "@/constants/site"
+import "@/styles/globals.css"
+import type { Metadata } from "next"
+import { Inter, JetBrains_Mono } from "next/font/google"
+
+/**
+ * Fonte Inter do Google Fonts, configurada para uso em todo o aplicativo.
+ * Fonte sans-serif padrão do site.
+ */
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
+})
+
+/**
+ * Fonte JetBrains Mono do Google Fonts, configurada para uso em todo o aplicativo.
+ * Fonte monoespaçada para códigos e determinados elementos.
+ */
+const jetBrainsMono = JetBrains_Mono({
+  variable: "--font-jetbrains-mono",
+  subsets: ["latin"],
+})
+
+/**
+ * Metadados para a aplicação.
+ */
+export const metadata: Metadata = {
+  // TODO: Personalizar metadados
+  title: {
+    template: SITE.title.template,
+    default: SITE.title.default,
+  },
+  description: SITE.description,
+  authors: [{ name: SITE.author.name }],
+  openGraph: {
+    title: SITE.title.default,
+    description: SITE.description,
+    url: SITE.url,
+    siteName: SITE.author.name,
+    locale: SITE.locale,
+    type: SITE.openGraph.type,
+    images: [{ url: SITE.openGraph.image }],
+  },
+}
+
+/**
+ * Layout raiz do aplicativo.
+ * Envolve toda a aplicação, definindo a estrutura HTML básica, provedores,
+ * e estilos globais.
+ */
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode
+}>) {
+  return (
+    <html
+      lang={SITE.locale} // idioma do site
+      suppressHydrationWarning // suprime avisos de hidratação para evitar problemas de renderização
+      className={`${inter.variable} ${jetBrainsMono.variable}`}
+    >
+      <body className="antialiased">
+        {/* Configuração de tema */}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark" // tema padrão
+          disableTransitionOnChange
+        >
+          {children} {/* Páginas e layouts aninhados */}
+        </ThemeProvider>
+      </body>
+    </html>
+  )
+}
