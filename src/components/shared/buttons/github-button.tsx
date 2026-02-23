@@ -1,6 +1,6 @@
+import GitHubLogo from "@/components/shared/svgs/github-logo"
 import { Button } from "@/components/ui/button"
 import { CONTACT } from "@/constants/content/contact"
-import GitHubLogo from "../svgs/github-logo"
 import { UI_TEXTS } from "@/constants/content/ui"
 import { cn } from "@/lib/utils"
 
@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils"
  */
 interface Props {
   label?: string
-  hideLabel?: boolean
+  iconOnly?: boolean
 }
 
 /**
@@ -18,17 +18,27 @@ interface Props {
 export default function GitHubButton({
   // Props
   label = UI_TEXTS.contact.github,
-  hideLabel,
-  variant = "outline",
-  size = hideLabel ? "icon" : "default",
+  iconOnly,
+  variant = "default",
+  size = iconOnly ? "icon" : "default",
   className,
   ...props
 }: Props & React.ComponentPropsWithoutRef<typeof Button>) {
   return (
-    <Button asChild variant={variant} className={cn("bg-github-black! hover:bg-github-black-hover! text-white!", className)} size={size} {...props}>
+    <Button
+      asChild
+      className={cn(
+        // Style:
+        "bg-github-gray-6 dark:bg-github-gray-5 text-white!",
+        className,
+      )}
+      variant={variant}
+      size={size}
+      {...props}
+    >
       <a href={CONTACT.github} target="_blank">
         <GitHubLogo />
-        <span className={cn({ "sr-only": hideLabel })}>{label}</span>
+        <span className={cn({ "sr-only": iconOnly })}>{label}</span>
       </a>
     </Button>
   )

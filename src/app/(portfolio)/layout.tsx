@@ -1,4 +1,4 @@
-import PortfolioHeader from "@/components/layout/portfolio-header"
+import PortfolioHeader from "@/components/layout/portfolio/portfolio-header"
 
 /**
  * Layout do portfólio.
