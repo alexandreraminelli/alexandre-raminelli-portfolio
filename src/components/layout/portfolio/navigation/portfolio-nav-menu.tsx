@@ -6,10 +6,24 @@ import Link from "next/link"
 /**
  * Menu de navegação do portfólio.
  */
-export default function PortfolioNavMenu({ className }: React.ComponentPropsWithRef<typeof NavigationMenu>) {
+export default function PortfolioNavMenu({ className, orientation, ...props }: React.ComponentPropsWithRef<typeof NavigationMenu>) {
   return (
-    <NavigationMenu className={cn(className)}>
-      <NavigationMenuList className="gap-1.5">
+    <NavigationMenu
+      className={cn(
+        className,
+        // Menu mobile
+        { "items-start w-full": orientation === "vertical" },
+      )}
+      orientation={orientation}
+      {...props}
+    >
+      <NavigationMenuList
+        className={cn(
+          "gap-1.5",
+          // Menu mobile
+          { "flex-col items-start justify-start w-full *:w-full": orientation === "vertical" },
+        )}
+      >
         {PORTFOLIO_MENU.map((item, index) => (
           <NavigationMenuItem key={index}>
             <NavigationMenuLink asChild>
