@@ -1,3 +1,13 @@
 export default function HomePage() {
-  return <p>Portfólio Alexandre Raminelli</p>
+  return (
+    <>
+      {/* Hero Section */}
+
+      {/* Habilidades */}
+
+      {/* Projetos */}
+
+      {/* Contato */}
+    </>
+  )
 }
