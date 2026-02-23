@@ -26,7 +26,7 @@ export default function PortfolioHeader() {
       <div className="flex flex-row items-center gap-2">
         {/* Botão do GitHub */}
         <GitHubButton className="max-sm:hidden" size="lg" />
-        <GitHubButton hideLabel className="sm:hidden" size="icon-lg" />
+        <GitHubButton iconOnly className="sm:hidden" size="icon-lg" />
         {/* Botão de tema */}
         <ModeToggle size="icon-lg" />
       </div>

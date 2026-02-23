@@ -124,8 +124,8 @@
   --radius-4xl: calc(var(--radius) + 16px);
 
   /* Logos */
-  --color-github-black: var(--github-gray-6);
-  --color-github-black-hover: var(--github-gray-5);
+  --color-github-gray-5: var(--github-gray-5);
+  --color-github-gray-6: var(--github-gray-6);
 }
 
 @layer base {
