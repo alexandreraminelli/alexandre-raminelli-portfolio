@@ -1,3 +1,16 @@
+import HeroSection from "@/components/sections/hero"
+
 export default function HomePage() {
-  return <p>Portfólio Alexandre Raminelli</p>
+  return (
+    <>
+      {/* Hero Section */}
+      <HeroSection />
+
+      {/* Habilidades */}
+
+      {/* Projetos */}
+
+      {/* Contato */}
+    </>
+  )
 }

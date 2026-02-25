@@ -1,6 +1,5 @@
 import PortfolioNavMenu from "@/components/layout/portfolio/navigation/portfolio-nav-menu"
 import GitHubButton from "@/components/shared/buttons/github-button"
-import { ModeToggle } from "@/components/shared/buttons/mode-toggle"
 import { Avatar, AvatarImage } from "@/components/ui/avatar"
 import { IMAGES } from "@/constants/images"
 import { SITE } from "@/constants/site"
@@ -30,8 +29,6 @@ export default function PortfolioHeader() {
         {/* Botão do GitHub */}
         <GitHubButton className="max-md:hidden" size="lg" />
         <GitHubButton iconOnly className="md:hidden" size="icon-lg" />
-        {/* Botão de tema */}
-        <ModeToggle size="icon-lg" />
 
         {/* Botão de menu mobile */}
         <PortfolioMobileMenu className="sm:hidden" />
