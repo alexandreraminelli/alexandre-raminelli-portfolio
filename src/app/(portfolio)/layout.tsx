@@ -1,6 +1,6 @@
 import PortfolioHeader from "@/components/layout/portfolio/portfolio-header"
 import { ThemeProvider } from "@/components/providers/theme-provider"
-import { DotPattern } from "@/components/ui/dot-pattern"
+import { ConstellationBackground } from "@/components/ui/constellation"
 
 /**
  * Layout do portfólio.
@@ -14,13 +14,13 @@ export default function PortfolioLayout({ children }: { children: React.ReactNod
         forcedTheme="dark" // forçar tema escuro
         disableTransitionOnChange
       >
-        <DotPattern>
+        <ConstellationBackground>
           {/* Header */}
           <PortfolioHeader />
 
           {/* Conteúdo */}
           {children}
-        </DotPattern>
+        </ConstellationBackground>
       </ThemeProvider>
     </>
   )
