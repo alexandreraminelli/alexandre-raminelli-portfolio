@@ -1,6 +1,5 @@
 import PortfolioNavMenu from "@/components/layout/portfolio/navigation/portfolio-nav-menu"
 import GitHubButton from "@/components/shared/buttons/github-button"
-import { ModeToggle } from "@/components/shared/buttons/mode-toggle"
 import { Avatar, AvatarImage } from "@/components/ui/avatar"
 import { IMAGES } from "@/constants/images"
 import { SITE } from "@/constants/site"
