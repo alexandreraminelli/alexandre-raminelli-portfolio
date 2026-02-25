@@ -1,4 +1,5 @@
 import PortfolioHeader from "@/components/layout/portfolio/portfolio-header"
+import { ThemeProvider } from "@/components/providers/theme-provider"
 import { DotPattern } from "@/components/ui/dot-pattern"
 
 /**
@@ -6,12 +7,21 @@ import { DotPattern } from "@/components/ui/dot-pattern"
  */
 export default function PortfolioLayout({ children }: { children: React.ReactNode }) {
   return (
-    <DotPattern>
-      {/* Header */}
-      <PortfolioHeader />
+    <>
+      <ThemeProvider
+        attribute="class"
+        defaultTheme="dark"
+        forcedTheme="dark" // forçar tema escuro
+        disableTransitionOnChange
+      >
+        <DotPattern>
+          {/* Header */}
+          <PortfolioHeader />
 
-      {/* Conteúdo */}
-      {children}
-    </DotPattern>
+          {/* Conteúdo */}
+          {children}
+        </DotPattern>
+      </ThemeProvider>
+    </>
   )
 }

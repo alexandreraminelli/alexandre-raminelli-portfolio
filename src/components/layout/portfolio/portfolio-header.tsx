@@ -30,8 +30,6 @@ export default function PortfolioHeader() {
         {/* Botão do GitHub */}
         <GitHubButton className="max-md:hidden" size="lg" />
         <GitHubButton iconOnly className="md:hidden" size="icon-lg" />
-        {/* Botão de tema */}
-        <ModeToggle size="icon-lg" />
 
         {/* Botão de menu mobile */}
         <PortfolioMobileMenu className="sm:hidden" />

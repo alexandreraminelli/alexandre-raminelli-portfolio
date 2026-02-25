@@ -1,4 +1,3 @@
-import { ThemeProvider } from "@/components/providers/theme-provider"
 import { SITE } from "@/constants/site"
 import "@/styles/globals.css"
 import type { Metadata } from "next"
@@ -61,14 +60,7 @@ export default function RootLayout({
       className={`${inter.variable} ${jetBrainsMono.variable}`}
     >
       <body className="antialiased">
-        {/* Configuração de tema */}
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark" // tema padrão
-          disableTransitionOnChange
-        >
-          {children} {/* Páginas e layouts aninhados */}
-        </ThemeProvider>
+        {children} {/* Páginas e layouts aninhados */}
       </body>
     </html>
   )
